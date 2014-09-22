@@ -6,7 +6,7 @@ PirateChest is totally independent of the internet thereby making it secure for 
 
 ## Installation
 
-I assume you already have Wamp Server on your computer.
+I assume you already have Wamp Server on your computer and PHP is an enviromental variable.
 
 1. First download or clone this repository into a folder 'PirateChest' in your www directory.
 2. Navigate to the application/_install folder and run the Install.bat file. On successful install move to step 3.
