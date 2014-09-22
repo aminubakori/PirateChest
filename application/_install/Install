@@ -1,0 +1,61 @@
+#!/usr/bin/env php
+<?php
+require '../libs/class.db.php';
+
+/**
+ * Class Install
+ */
+class Install
+{
+    public function __construct()
+    {
+    	$db = new db("sqlite:../data/PirateChest.db");
+
+        file_put_contents("../data/PirateChest.db", "");
+
+        $sql = <<<STR
+CREATE TABLE pc_user (
+    ID INTEGER PRIMARY KEY,
+    Username TEXT,
+    Password TEXT
+)
+STR;
+        $db->run($sql);
+
+        $sql = "CREATE TABLE pc_chat (
+                ID INTEGER PRIMARY KEY,
+                Username TEXT,
+                Message TEXT,
+                MsgColor TEXT
+            )";
+        $db->run($sql);
+
+        $db->run("DELETE * FROM pc_user");
+        $db->run("DELETE * FROM pc_chat");
+
+        $this->delete_dir_content("../PirateChest/");
+
+        echo "\nPirateChest was Successfully Installed.\n";
+        echo "Press any key to exit.\n";
+        shell_exec('PAUSE');
+    }
+
+    public function delete_dir_content($dir) {
+        if(is_dir($dir)) {
+            $files = opendir($dir);
+            while (($file = readdir($files)) !== false) {
+                if($file != '.' && $file != '..') {
+                    if (is_file($dir.$file)) {
+                        unlink($dir.$file);
+                    }else {
+                        $this->delete_dir_content($dir.$file."/");
+                        rmdir($dir.$file);
+                    }
+                }
+            }
+            closedir($files);
+        }
+    }
+}
+
+$install = new Install();

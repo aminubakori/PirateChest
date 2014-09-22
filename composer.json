@@ -1,0 +1,23 @@
+{
+    "name": "AminuBakori/PirateChest",
+    "type": "project",
+    "description": "PirateChest is a file sharing application written in PHP.",
+    "keywords": ["files", "wifi", "sharing", "chat", "class", "hackdays"],
+    "homepage": "https://github.com/AminuBakori/PirateChest",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aminu Ibrahim Bakori",
+            "homepage": "http://www.friendstie.com/users/aminubakori",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/AminuBakori/PirateChest/issues",
+        "source": "https://github.com/AminuBakori/PirateChest"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "symfony/filesystem": "2.6.*@dev"
+    }
+}

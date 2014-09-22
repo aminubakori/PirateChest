@@ -1,0 +1,40 @@
+#!/usr/bin/env php
+<?php
+	
+	/*
+	|--------------------------------------------------------------------------
+	| PirateChest Server Options
+	|--------------------------------------------------------------------------
+	|
+	| Please set or leave default values for the PirateChest Server.
+	|
+	*/
+	$ServerName = "PirateChest_".rand(1,9);
+	$ServerKey = 12345678;
+	$ServerPort = 3000;
+	$ServerHost = gethostbyname($_SERVER['COMPUTERNAME']);
+
+	/*
+	|--------------------------------------------------------------------------
+	| PirateChest Server Console Output
+	|--------------------------------------------------------------------------
+	|
+	| Please do not change below if you dont know what you are doing.
+	|
+	*/
+	echo shell_exec('netsh wlan set hostednetwork mode=allow ssid='.$ServerName.' key='.$ServerKey);
+	shell_exec('netsh wlan start hostednetwork');
+	shell_exec('netsh wlan stop hostednetwork');
+	echo shell_exec('netsh wlan start hostednetwork');
+
+	echo "+------------------------------------------------------------------+\n";
+	echo "+        SSID       |     KEY     |        IP        |     PORT    +\n";
+	echo "+------------------------------------------------------------------+\n";
+	echo "+   ".$ServerName."   |   ".$ServerKey."  |   ".$ServerHost."  |     ".$ServerPort."    +\n";
+	echo "+------------------------------------------------------------------+\n\n";
+
+	echo "Router Started Successfully and running at ".$ServerHost." on port ".$ServerPort.".\n";
+	echo "Navigate to ".$ServerHost.":".$ServerPort." on connected devices.\n";
+	echo "Press Ctrl-C to quit.\n";
+	shell_exec('php -S 0.0.0.0:'.$ServerPort);
+?>

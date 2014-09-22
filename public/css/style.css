@@ -1,0 +1,191 @@
+/* PirateChest CSS */
+body {
+	background: none repeat scroll 0% 0% #FEFEFE !important;
+}
+body.login-page {
+	/*background-color: #000 !important;*/
+	background: -moz-linear-gradient(center top , rgba(55, 58, 62, 1) 0%, rgba(0, 0, 0, 1) 100%) repeat scroll 0% 0% transparent !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(55, 58, 62, 1)), color-stop(100%,rgba(0, 0, 0, 1))) !important;
+    background: -webkit-linear-gradient(top, rgba(55, 58, 62, 1) 0%,rgba(0, 0, 0, 1) 100%) !important;
+    background: -o-linear-gradient(top, rgba(55, 58, 62, 1) 0%,rgba(0, 0, 0, 1) 100%) !important;
+    background: -ms-linear-gradient(top, rgba(55, 58, 62, 1) 0%,rgba(0, 0, 0, 1) 100%) !important;
+    background: linear-gradient(top, rgba(55, 58, 62, 1) 0%,rgba(0, 0, 0, 1) 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(55, 58, 62, 1)', endColorstr='rgba(0, 0, 0, 1)',GradientType=0 ) !important;
+	color: #FFF !important;
+}
+
+body.login-page h1,
+body.login-page h2,
+body.login-page h3,
+body.login-page h4,
+body.login-page h5,
+body.login-page h6,
+body.login-page p {
+	color: #FFF !important;
+}
+
+body.login-page section {
+	margin: auto;
+	height: 80%;
+	min-height: 400px;
+	max-width: 400px;
+	padding-top: 10%;
+	cursor: default;
+	text-align: center;
+}
+
+body.login-page section form {
+	text-align: left;
+	max-width: 98%;
+	margin: auto;
+}
+
+body.login-page footer {
+	text-align: center;
+	cursor: default;
+}
+
+ul.nav {
+	width: 100%;
+	margin: auto;
+	padding: 0px 5px 0px 5px;
+	overflow: hidden;
+}
+
+ul.nav li {
+	display: inline-block; 
+	padding: 5px;
+	list-style: none;
+}
+
+ul.nav li a {
+	opacity: 0.5;
+	color: #000;
+}
+
+ul.nav li a:hover {
+	opacity: 1;
+	color: #000;
+}
+
+ul.nav li a span {
+	color: #000 !important;
+}
+
+ul.nav li button {
+	background: #000;
+	opacity: 0.5;
+}
+
+ul.nav li button:hover {
+	opacity: 1;
+}
+
+ul.sidenav {
+	width: 100%;
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+}
+
+ul.sidenav a li {
+	display: block; 
+	list-style: none;
+	height: 45px;
+	padding: 10px;
+}
+
+ul.sidenav a li:hover {
+	background: #CCC;
+}
+
+ul.sidenav a {
+	color: #333 !important;
+	text-overflow: ellipsis;
+}
+
+ul.sidenav a li.active {
+	background: #DEDEDE;
+}
+
+ul.sidenav a li.active:hover {
+	background: #CCC;
+}
+
+/* User Section */
+section.user {
+	height: 94%; 
+	height: calc(100% - 45px);
+}
+
+section.user .box {
+	overflow: hidden; 
+	height: 100%;
+}
+
+section.user .box .box20 {
+	float: left; 
+	width: 20%; 
+	height: 100%; 
+	background-color: #F5F5F5; 
+	box-sizing: border-box;
+}
+
+section.user .box .box80 {
+	float: left; 
+	width: 80%;
+}
+
+section.user .box .box80 table th{
+	cursor: pointer;
+}
+
+section.user .box .box80 table th .sort{
+	opacity: 0;
+}
+
+#newfolderform,
+#uploadstatus,
+#uploadbtn {
+	display: none;
+}
+
+
+@media(max-width: 640px){
+	body.login-page section {
+		max-width: 98%;
+	}
+
+	ul.nav li.on-phone {
+		display: inline-block !important;
+	}
+
+	section.user .box .sidenav {
+		display: none;
+	}
+
+	section.user .box .box80 {
+		width: 100%;
+	}
+}
+
+.chat {
+	width: 100%;
+	height: 100%;
+}
+
+.messages {
+	width: 100%;
+	height: 55%;
+	border: 1px solid #000;
+	overflow: scroll;
+}
+
+.messages .msg {
+	margin: 0px 0px 5px 0px;
+}
+
+.form {
+	width: 100%;
+	text-align: center;
+}
